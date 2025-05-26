@@ -9,10 +9,7 @@
 position = Vector2(64, 64)
 
 [node name="Stem" parent="." instance=ExtResource("2_0wfyh")]
-position = Vector2(120, 64)
+position = Vector2(112, 112)
 
 [node name="Stem2" parent="." instance=ExtResource("2_0wfyh")]
 position = Vector2(208, 88)
-
-[node name="Stem3" parent="." instance=ExtResource("2_0wfyh")]
-position = Vector2(120, 80)

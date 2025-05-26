@@ -2,6 +2,9 @@
 
 extends CharacterBody2D
 
+# Инвентарь: список собранных предметов
+var inventory: Array = []
+
 const  SPEED := 200
 
 func _physics_process(_delta):
@@ -18,3 +21,9 @@ func _physics_process(_delta):
 
 	velocity = direction.normalized() * SPEED
 	move_and_slide()
+
+# Метод для добавления предмета в инвентарь
+func add_to_inventory(item_name: String) -> void:
+	inventory.append(item_name)
+	print("Collected:", item_name)
+	print("Inventory now:", inventory)
