@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bnwgluglsc15p"]
+
+[ext_resource type="Script" uid="uid://ctu4kvm3kc0pr" path="res://scripts/ItemData.cs" id="1_31646"]
+[ext_resource type="Texture2D" uid="uid://c0k2i7h63dovy" path="res://assets/resource-pack/fruit.png" id="1_fslnw"]
+
+[resource]
+script = ExtResource("1_31646")
+ItemName = "Fruit"
+Icon = ExtResource("1_fslnw")
+metadata/_custom_type_script = "uid://ctu4kvm3kc0pr"

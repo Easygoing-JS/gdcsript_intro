@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c7xjdapl5u4p7"]
+
+[ext_resource type="Script" uid="uid://ctu4kvm3kc0pr" path="res://scripts/ItemData.cs" id="1_cuw8k"]
+[ext_resource type="Texture2D" uid="uid://ds6t28infvcpi" path="res://assets/resource-pack/rock.png" id="1_rv3fr"]
+
+[resource]
+script = ExtResource("1_cuw8k")
+ItemName = "Rock"
+Icon = ExtResource("1_rv3fr")
+MaxStackSize = 99
+metadata/_custom_type_script = "uid://ctu4kvm3kc0pr"

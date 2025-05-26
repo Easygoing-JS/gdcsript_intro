@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://smawonm722gp"]
+
+[ext_resource type="Script" uid="uid://xu3mcxf66ncc" path="res://scripts/item.gd" id="1_4gq7n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3ghi"]
+size = Vector2(32, 8)
+
+[node name="Item" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_4gq7n")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -16.0
+offset_right = 16.0
+offset_bottom = 8.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_r3ghi")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -40.0
+offset_top = -16.0
+offset_right = 48.0
+theme_override_font_sizes/font_size = 10
+text = "Press [E] to collect"
+autowrap_mode = 2
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
