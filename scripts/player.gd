@@ -2,11 +2,25 @@
 
 extends CharacterBody2D
 
-# Инвентарь: список собранных предметов
+# Добавлено: инвентарь как массив
 var inventory: Array = []
+
+# Добавлено: ссылка на UI
+@onready var ui = $ui
 
 const  SPEED := 200
 
+# Метод добавления предмета в инвентарь
+func add_to_inventory(item_name: String) -> void:
+	inventory.append(item_name)  # Добавляем предмет в массив
+	print("Collected:", item_name)  # Печатаем собранный предмет
+	print("Inventory now:", inventory)  # Печатаем весь инвентарь
+
+	# Добавлено: если UI поддерживает метод обновления — вызываем его
+	if ui.has_method("update_inventory_display"):
+		ui.update_inventory_display(inventory)
+
+# Метод for moving
 func _physics_process(_delta):
 	var direction := Vector2.ZERO
 
@@ -21,9 +35,3 @@ func _physics_process(_delta):
 
 	velocity = direction.normalized() * SPEED
 	move_and_slide()
-
-# Метод для добавления предмета в инвентарь
-func add_to_inventory(item_name: String) -> void:
-	inventory.append(item_name)
-	print("Collected:", item_name)
-	print("Inventory now:", inventory)
