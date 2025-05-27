@@ -6,7 +6,7 @@ extends CharacterBody2D
 var inventory: Array = []
 
 # Добавлено: ссылка на UI
-@onready var ui = $ui
+@onready var ui = $UI
 
 const  SPEED := 200
 
