@@ -6,10 +6,13 @@
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
-position = Vector2(144, 48)
+position = Vector2(144, 112)
 
 [node name="Stem" parent="." instance=ExtResource("2_0wfyh")]
-position = Vector2(192, 120)
+position = Vector2(168, 144)
 
-[node name="Stem2" parent="." instance=ExtResource("2_0wfyh")]
-position = Vector2(288, 96)
+[node name="Item" parent="." instance=ExtResource("2_0wfyh")]
+position = Vector2(272, 160)
+
+[node name="Item2" parent="." instance=ExtResource("2_0wfyh")]
+position = Vector2(256, 112)
