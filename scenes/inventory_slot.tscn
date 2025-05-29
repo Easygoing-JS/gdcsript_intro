@@ -14,6 +14,7 @@ script = ExtResource("1_dxvxp")
 layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
+expand_mode = 2
 stretch_mode = 5
 
 [node name="CountLabel" type="Label" parent="."]
@@ -42,6 +43,4 @@ offset_top = -23.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 12
-text = "ffsdfsf"
-horizontal_alignment = 1
 vertical_alignment = 2

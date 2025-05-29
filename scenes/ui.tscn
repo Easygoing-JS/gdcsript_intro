@@ -1,11 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bx0b37plc8ikp"]
+[gd_scene load_steps=2 format=3 uid="uid://bx0b37plc8ikp"]
 
 [ext_resource type="Script" uid="uid://cjdv2v6nsshm0" path="res://scripts/ui.gd" id="1_nt7q6"]
-[ext_resource type="PackedScene" uid="uid://b1oomrlfu0wci" path="res://scenes/inventory_slot.tscn" id="2_x4jx1"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_nt7q6")
-slot_scene = ExtResource("2_x4jx1")
 
 [node name="InventoryGrid" type="GridContainer" parent="."]
 custom_minimum_size = Vector2(256, 256)

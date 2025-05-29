@@ -1,22 +1,16 @@
-# scripts/player.gd
-
 extends CharacterBody2D
 
-# Добавлено: инвентарь как массив
-var inventory: Array = []
+var inventory: Dictionary = {}
 
-# Добавлено: ссылка на UI
 @onready var ui = $UI
 
-const  SPEED := 200
+const SPEED := 200
 
-# Метод добавления предмета в инвентарь
-func add_to_inventory(item_name: String) -> void:
-	inventory.append(item_name)
-	if ui.has_method("update_inventory_display"):
-		ui.update_inventory_display(inventory)
+# Добавление предмета в инвентарь
+func add_to_inventory(item_type: String) -> void:
+	inventory[item_type] = inventory.get(item_type, 0) + 1
+	ui.update_inventory_display(inventory)
 
-# Метод for moving
 func _physics_process(_delta):
 	var direction := Vector2.ZERO
 

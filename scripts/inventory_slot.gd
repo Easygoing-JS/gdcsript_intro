@@ -1,12 +1,16 @@
-# scripts/inventory_slot.gd
 extends Control
 
 @onready var icon = $Icon
 @onready var count_label = $CountLabel
-@onready var name_label = $NameLabel  # Новый узел
+@onready var name_label = $NameLabel
 
-func set_item(texture: Texture, count: int, item_name: String) -> void:
-	icon.texture = texture
-	count_label.text = str(count)
-	count_label.visible = count > 1
-	name_label.text = item_name  # Устанавливаем имя
+# Установка данных предмета в ячейку
+func set_item(texture: Texture, item_name: String, count: int) -> void:
+	if not icon or not count_label or not name_label:
+		push_warning("Один или несколько узлов (Icon, CountLabel, NameLabel) не найдены!")
+		return
+
+	icon.texture = texture                          # Установка иконки
+	name_label.text = item_name                     # Название предмета
+	count_label.text = str(count)                   # Количество предметов
+	count_label.visible = count > 1                 # Показывать только если больше 1
