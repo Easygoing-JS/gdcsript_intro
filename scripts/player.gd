@@ -1,16 +1,24 @@
 extends CharacterBody2D
 
+# Инвентарь как словарь: { "wood": 2, "rock": 1, ... }
 var inventory: Dictionary = {}
 
+# Ссылка на UI
 @onready var ui = $UI
 
 const SPEED := 200
 
-# Добавление предмета в инвентарь
-func add_to_inventory(item_type: String) -> void:
-	inventory[item_type] = inventory.get(item_type, 0) + 1
-	ui.update_inventory_display(inventory)
+# Метод добавления предмета в инвентарь
+func add_to_inventory(item_name: String) -> void:
+	if inventory.has(item_name):
+		inventory[item_name] += 1
+	else:
+		inventory[item_name] = 1
 
+	if ui.has_method("update_inventory_display"):
+		ui.update_inventory_display(inventory)
+
+# Движение
 func _physics_process(_delta):
 	var direction := Vector2.ZERO
 

@@ -1,32 +1,23 @@
-# scripts/ui.gd
 extends CanvasLayer
 
-@onready var inventory_grid: GridContainer = $InventoryGrid
-@onready var slot_scene: PackedScene = preload("res://scenes/inventory_slot.tscn")
+@onready var inventory_grid = $InventoryGrid
+@onready var slot_scene = preload("res://scenes/inventory_slot.tscn")
 
-# Метод для обновления визуального инвентаря
+# Метод отображения инвентаря
 func update_inventory_display(inventory: Dictionary):
-	# Очистить предыдущие слоты
+	# Удаляем старые слоты
 	for child in inventory_grid.get_children():
 		child.queue_free()
 
-	# Подсчёт количества каждого типа предметов
-	var item_counts: Dictionary = {}
-	for item_name in inventory:
-		if item_counts.has(item_name):
-			item_counts[item_name] += 1
-		else:
-			item_counts[item_name] = 1
+	# Используем inventory как есть
+	var item_counts = inventory
 
-	# Создание новых слотов с обновлённой информацией
 	for item_name in item_counts.keys():
 		var slot = slot_scene.instantiate()
 		inventory_grid.add_child(slot)
 
-		# Пытаемся получить информацию из item_data.gd или по заглушке
 		var item_data = get_item_data(item_name)
-		
-		# Настройка иконки и текста
+
 		var icon_node = slot.get_node("Icon")
 		var count_label = slot.get_node("CountLabel")
 		var name_label = slot.get_node("NameLabel")
@@ -35,18 +26,18 @@ func update_inventory_display(inventory: Dictionary):
 			icon_node.texture = item_data.icon if item_data.has("icon") else null
 		if count_label:
 			count_label.text = str(item_counts[item_name])
+			count_label.visible = item_counts[item_name] > 1
 		if name_label:
 			name_label.text = item_data.display_name if item_data.has("display_name") else item_name
 
-# Временно заглушка для получения данных о предмете
+# Метод с данными о типах предметов
 func get_item_data(item_name: String) -> Dictionary:
-	# В будущем можно заменить загрузкой из ресурса или базы данных
 	var dummy_data: Dictionary = {
 		"wood": {
 			"display_name": "Wood",
 			"icon": preload("res://assets/icons/wood.png")
 		},
-		"stone": {
+		"rock": {
 			"display_name": "Rock",
 			"icon": preload("res://assets/icons/rock.png")
 		},

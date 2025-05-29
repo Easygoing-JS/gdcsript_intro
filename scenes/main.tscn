@@ -6,28 +6,28 @@
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
-position = Vector2(144, 120)
+position = Vector2(272, 120)
 
 [node name="Wood" parent="." instance=ExtResource("2_0wfyh")]
-position = Vector2(80, 72)
+position = Vector2(208, 72)
 item_type = "wood"
 
 [node name="Wood3" parent="." instance=ExtResource("2_0wfyh")]
-position = Vector2(-8, 112)
+position = Vector2(120, 112)
 item_type = "wood"
 
 [node name="Wood2" parent="." instance=ExtResource("2_0wfyh")]
-position = Vector2(80, 152)
+position = Vector2(208, 152)
 item_type = "wood"
 
 [node name="Rock" parent="." instance=ExtResource("2_0wfyh")]
-position = Vector2(208, 72)
+position = Vector2(336, 72)
 item_type = "rock"
 
 [node name="Rock3" parent="." instance=ExtResource("2_0wfyh")]
-position = Vector2(280, 112)
+position = Vector2(408, 112)
 item_type = "rock"
 
 [node name="Rock2" parent="." instance=ExtResource("2_0wfyh")]
-position = Vector2(208, 152)
+position = Vector2(336, 152)
 item_type = "rock"

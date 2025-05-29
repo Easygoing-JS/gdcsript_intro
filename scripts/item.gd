@@ -4,6 +4,7 @@ extends Area2D
 
 @export var item_type: String = "default_item"  # Тип предмета, задаётся в инспекторе
 @onready var player = null
+@onready var label = $Label
 
 #func _ready():
 	#connect("body_entered", Callable(self, "_on_body_entered"))
@@ -15,11 +16,13 @@ func _on_body_entered(body):
 	if body.name == "Player":
 		player = body
 		player_in_area = true
+		label.visible = true
 
 func _on_body_exited(body):
 	if body.name == "Player":
 		player_in_area = false
 		player = null
+		label.visible = false
 
 func _process(_delta):
 	if player_in_area and Input.is_action_just_pressed("interact"):

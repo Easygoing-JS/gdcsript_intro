@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1oomrlfu0wci"]
+[gd_scene load_steps=3 format=3 uid="uid://b1oomrlfu0wci"]
 
 [ext_resource type="Script" uid="uid://jx8wu1a757v5" path="res://scripts/inventory_slot.gd" id="1_dxvxp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dxvxp"]
+bg_color = Color(0.396889, 0.396889, 0.396889, 1)
 
 [node name="InventorySlot" type="Control"]
 custom_minimum_size = Vector2(64, 64)
@@ -10,10 +13,21 @@ offset_right = 64.0
 offset_bottom = 64.0
 script = ExtResource("1_dxvxp")
 
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dxvxp")
+
 [node name="Icon" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 64.0
-offset_bottom = 64.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 56.0
 expand_mode = 2
 stretch_mode = 5
 
@@ -25,7 +39,8 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -40.0
-offset_top = -23.0
+offset_top = -17.0
+offset_right = -8.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 12
@@ -39,7 +54,9 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -23.0
+offset_left = 8.0
+offset_top = -17.0
+offset_right = -16.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 12

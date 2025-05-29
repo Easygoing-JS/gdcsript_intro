@@ -19,11 +19,12 @@ position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_r3ghi")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -40.0
+offset_left = -32.0
 offset_top = -16.0
-offset_right = 48.0
+offset_right = 32.0
 theme_override_font_sizes/font_size = 10
-text = "Press [E] to collect"
+text = "[E] collect"
+horizontal_alignment = 1
 autowrap_mode = 2
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
