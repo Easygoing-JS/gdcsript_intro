@@ -8,11 +8,18 @@
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
 position = Vector2(144, 112)
 
-[node name="Stem" parent="." instance=ExtResource("2_0wfyh")]
+[node name="Wood" parent="." instance=ExtResource("2_0wfyh")]
 position = Vector2(168, 144)
+item_type = "wood"
 
-[node name="Item" parent="." instance=ExtResource("2_0wfyh")]
+[node name="Wood2" parent="." instance=ExtResource("2_0wfyh")]
 position = Vector2(272, 160)
+item_type = "wood"
 
-[node name="Item2" parent="." instance=ExtResource("2_0wfyh")]
+[node name="Rock" parent="." instance=ExtResource("2_0wfyh")]
 position = Vector2(256, 112)
+item_type = "rock"
+
+[node name="Rock2" parent="." instance=ExtResource("2_0wfyh")]
+position = Vector2(408, 80)
+item_type = "rock"

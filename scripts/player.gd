@@ -12,11 +12,7 @@ const  SPEED := 200
 
 # Метод добавления предмета в инвентарь
 func add_to_inventory(item_name: String) -> void:
-	inventory.append(item_name)  # Добавляем предмет в массив
-	print("Collected:", item_name)  # Печатаем собранный предмет
-	print("Inventory now:", inventory)  # Печатаем весь инвентарь
-
-	# Добавлено: если UI поддерживает метод обновления — вызываем его
+	inventory.append(item_name)
 	if ui.has_method("update_inventory_display"):
 		ui.update_inventory_display(inventory)
 
